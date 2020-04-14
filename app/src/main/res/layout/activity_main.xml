@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:background="#D8BEC7"
+    android:background="@drawable/watsapp_wallpaper"
     tools:context=".MainActivity">
+
+<!--    android:background="#bdc3c7"-->
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:id="@+id/appbar"
-        android:background="@android:color/transparent"
         android:layout_height="wrap_content"
 
         android:theme="?attr/actionBarTheme">
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:id="@+id/toolbar"
             android:elevation="4dp"
-            android:background="@drawable/cust_appbar_background"
+            android:background="#054D44"
             app:title="@string/app_name"
             android:layout_height="?attr/actionBarSize"/>
 
@@ -27,10 +27,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_height="match_parent"
         android:id="@+id/recyclerView"
         android:layout_below="@+id/appbar"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="2dp"/>
 
 
 

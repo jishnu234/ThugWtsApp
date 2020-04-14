@@ -4,10 +4,17 @@ class User {
 
     int image;
     String name;
+    int music;
 
-    public User(int image, String name) {
+    public User(int image, String name,int music) {
         this.image = image;
         this.name = name;
+        this.music=music;
+    }
+
+
+    public int getMusic() {
+        return music;
     }
 
     public int getImage() {

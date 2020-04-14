@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +22,9 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.dialog.MaterialDialogs;
 
 import java.util.ArrayList;
 
@@ -37,27 +43,28 @@ public class MainActivity extends AppCompatActivity {
 
          toolbar=findViewById(R.id.toolbar);
          setSupportActionBar(toolbar);
+
          recyclerView=findViewById(R.id.recyclerView);
 
 
-         arrayList.add(new User(R.drawable.polytechnic,"sreenivasan"));
-         arrayList.add(new User(R.drawable.suraj,"suraj"));
-        arrayList.add(new User(R.drawable.evideyo_entho_thakararu_pole,"harisree asokan"));
-        arrayList.add(new User(R.drawable.ithoke_enthu,"salim kumar"));
-        arrayList.add(new User(R.drawable.pinne_oru_aiswary_rai,"santhosh pandit"));
-        arrayList.add(new User(R.drawable.ramanan,"harisree asokan"));
-        arrayList.add(new User(R.drawable.polytechnic,"sreenivasan"));
-        arrayList.add(new User(R.drawable.suraj,"suraj"));
-        arrayList.add(new User(R.drawable.evideyo_entho_thakararu_pole,"harisree asokan"));
-        arrayList.add(new User(R.drawable.ithoke_enthu,"salim kumar"));
-        arrayList.add(new User(R.drawable.pinne_oru_aiswary_rai,"santhosh pandit"));
-        arrayList.add(new User(R.drawable.ramanan,"harisree asokan"));
-        arrayList.add(new User(R.drawable.polytechnic,"sreenivasan"));
-        arrayList.add(new User(R.drawable.suraj,"suraj"));
-        arrayList.add(new User(R.drawable.evideyo_entho_thakararu_pole,"harisree asokan"));
-        arrayList.add(new User(R.drawable.ithoke_enthu,"salim kumar"));
-        arrayList.add(new User(R.drawable.pinne_oru_aiswary_rai,"santhosh pandit"));
-        arrayList.add(new User(R.drawable.ramanan,"harisree asokan"));
+         arrayList.add(new User(R.drawable.polytechnic,"sreenivasan",R.raw.dharavi_kochinhaneefa));
+         arrayList.add(new User(R.drawable.suraj,"suraj",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.evideyo_entho_thakararu_pole,"harisree asokan",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.ithoke_enthu,"salim kumar",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.pinne_oru_aiswary_rai,"santhosh pandit",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.ramanan,"harisree asokan",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.polytechnic,"sreenivasan",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.suraj,"suraj",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.evideyo_entho_thakararu_pole,"harisree asokan",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.ithoke_enthu,"salim kumar",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.pinne_oru_aiswary_rai,"santhosh pandit",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.ramanan,"harisree asokan",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.polytechnic,"sreenivasan",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.suraj,"suraj",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.evideyo_entho_thakararu_pole,"harisree asokan",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.ithoke_enthu,"salim kumar",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.pinne_oru_aiswary_rai,"santhosh pandit",R.raw.dharavi_kochinhaneefa));
+        arrayList.add(new User(R.drawable.ramanan,"harisree asokan",R.raw.dharavi_kochinhaneefa));
 
 
 
@@ -115,10 +122,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        MaterialAlertDialogBuilder builder=new MaterialAlertDialogBuilder(MainActivity.this);
         builder.setTitle("Exit")
                 .setMessage("Do you really want to exit!")
                 .setCancelable(false)
+                .setIcon(R.drawable.crying_imoji)
+                .setBackground(getResources().getDrawable(R.drawable.top_layout))
                 .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -127,15 +136,17 @@ public class MainActivity extends AppCompatActivity {
                 }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
+                dialog.dismiss();
             }
         });
         AlertDialog dialog=builder.create();
         dialog.show();
-        Button positive=dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-        positive.setTextColor(Color.RED);
-        Button negative=dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-        negative.setTextColor(Color.RED);
+
+
+//        Button positive=dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+//        positive.setTextColor(Color.);
+//        Button negative=dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+//        negative.setTextColor(Color.GREEN);
 
     }
 }
