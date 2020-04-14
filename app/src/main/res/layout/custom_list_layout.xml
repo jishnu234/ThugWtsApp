@@ -32,8 +32,8 @@
                 android:src="@drawable/polytechnic" />
             <ImageView
                 android:id="@+id/play_button"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:tint="#696969"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="100dp"
@@ -66,7 +66,7 @@
                 android:text="content"
                 android:layout_below="@+id/play_button"
                 android:textColor="#696969"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textStyle="italic" />
 
 

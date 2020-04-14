@@ -42,17 +42,17 @@
 <!--    android:id="@+id/logo_image"-->
 <!--    />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/logo_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/bangers"
-        android:text=" VOICE OF THUGS "
-        android:textColor="#128C7E"
-        android:id="@+id/slogan"
-        android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/aclonica"
+            android:text=" VOICE OF THUGS "
+            android:textColor="#128C7E"
+            android:textSize="30dp" />
     </LinearLayout>
 
 
