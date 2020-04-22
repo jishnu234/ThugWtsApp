@@ -34,6 +34,7 @@ dependencies {
     implementation 'com.android.support:design:29.0.0'
 
 
+
     //CardView
     implementation 'androidx.cardview:cardview:1.0.0'
 
@@ -42,7 +43,9 @@ dependencies {
 
     //circularImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
     implementation 'com.google.android.material:material:1.2.0-alpha05'
+    implementation 'com.google.android.material:material:1.0.0'
 
 
 }

@@ -45,7 +45,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements Fi
             holder.imageView.setImageResource(userArrayList.get(position).getImage());
             holder.textView.setText(userArrayList.get(position).getName());
 
-            holder.play_button.setOnClickListener(new View.OnClickListener() {
+            holder.play_button.setOnClickListener(
+                    new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Counter King</string>
+
+    <string name="slide_txt_one">This application designed for counter voice sharing</string>
+    <string name="slider_txt_two">Search your desired voices through search bar</string>
+    <string name="slider_txt_three">Simply share the voice by clicking share button</string>
+
+
+
+
+
 </resources>

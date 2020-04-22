@@ -3,6 +3,7 @@ package com.example.thugwtsapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -28,12 +30,16 @@ import com.google.android.material.dialog.MaterialDialogs;
 
 import java.util.ArrayList;
 
+import static androidx.recyclerview.widget.LinearLayoutManager.*;
+
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private ArrayList<User> arrayList=new ArrayList<>();
     private RecyclerView recyclerView;
     MyAdapter adapter;
+    private RecyclerView horizontal_recyclerview;
+    private ArrayList<UserHorizontal> horizontalArrayList=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
          setSupportActionBar(toolbar);
 
          recyclerView=findViewById(R.id.recyclerView);
+         horizontal_recyclerview=findViewById(R.id.recyclerview_horizontal);
 
 
          arrayList.add(new User(R.drawable.polytechnic,"sreenivasan",R.raw.dharavi_kochinhaneefa));
@@ -67,7 +74,17 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new User(R.drawable.ramanan,"harisree asokan",R.raw.dharavi_kochinhaneefa));
 
 
+        for(int i=0;i<20;i++)
+        {
+            horizontalArrayList.add(new UserHorizontal("Ramanan",R.drawable.ramanan));
+        }
 
+        HorizontalViewHelper helper=new HorizontalViewHelper(this,horizontalArrayList);
+
+        horizontal_recyclerview.setHasFixedSize(true);
+        LinearLayoutManager manager=new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL,false);
+        horizontal_recyclerview.setLayoutManager(manager);
+        horizontal_recyclerview.setAdapter(helper);
 
          inflateLayout();
     }
@@ -142,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog=builder.create();
         dialog.show();
 
-
+//
 //        Button positive=dialog.getButton(DialogInterface.BUTTON_POSITIVE);
 //        positive.setTextColor(Color.);
 //        Button negative=dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
